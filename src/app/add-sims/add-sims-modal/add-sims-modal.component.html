@@ -18,6 +18,7 @@
           placeholder="Batch Name"
           name="name"
           formControlName="name"
+          [(ngModel)]="batch.name"
         />
       </div>
     </div>
@@ -30,6 +31,7 @@
           placeholder="ICCID (19 + 1 digit checksum)"
           name="iccid"
           formControlName="iccid"
+          [(ngModel)]="batch.startIccid"
         />
       </div>
     </div>
@@ -43,6 +45,7 @@
           placeholder="IMSI (15 digits)"
           name="imsi"
           formControlName="imsi"
+          [(ngModel)]="batch.startImsi"
         />
       </div>
     </div>
@@ -56,6 +59,8 @@
           placeholder="Number of SIMs to create"
           name="count"
           formControlName="count"
+          [(ngModel)]="batch.count"
+          type="number"
         />
       </div>
     </div>
@@ -84,6 +89,7 @@
             formControlName="active"
             ngbButton
             [value]="true"
+            [(ngModel)]="batch.isActive"
           />
         </label>
         <!-- <input
@@ -123,8 +129,9 @@
     type="submit"
     [disabled]="!addSimsForm.valid"
     class="btn btn-outline-dark"
-    (click)="onSubmit()"
+    (click)="createBatch(); onSubmit()"
   >
     Submit
   </button>
 </div>
+<!-- (click)="onSubmit()" -->

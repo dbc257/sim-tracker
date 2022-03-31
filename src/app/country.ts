@@ -6,7 +6,7 @@ export interface Country {
   population: number;
 }
 
-export interface SIM {
+export interface Sim {
   id: number;
   // name: string;
   iccid: string;
@@ -14,6 +14,6 @@ export interface SIM {
   // count: string;
   isActive: boolean;
   batchId: number;
-  createdAt: string;
-  updatedAt: string;
+  // createdAt: string;
+  // updatedAt: string;
 }

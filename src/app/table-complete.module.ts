@@ -15,6 +15,7 @@ import { AddSimsModalComponent } from './add-sims/add-sims-modal/add-sims-modal.
 import { ConfigComponent } from './config/config.component';
 import { HeroesComponent } from './sims/sims.component';
 import { HttpErrorHandler } from './http-error-handler.service';
+// import { SimsComponent } from './countries';
 
 @NgModule({
   declarations: [

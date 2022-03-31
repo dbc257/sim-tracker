@@ -34,6 +34,29 @@ export class TableService {
       .pipe(map((res: any) => Object.values(res)));
   }
 
+  postBatches() {
+    return this.http
+      .post('https://simulator-api.onrender.com/v1/batches', {
+        name: 'Batch 1',
+        startIccid: '89520400007800343321',
+        startImsi: '334140000000228',
+        count: 10,
+        isActive: true,
+      })
+      .subscribe(
+        (val) => {
+          console.log('POST call successful value returned in body', val);
+        },
+        (response) => {
+          console.log('POST call in error', response);
+        },
+        () => {
+          console.log('The POST observable is now completed.');
+        }
+      );
+    // .pipe(map((res: any) => Object.values(res)));
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.

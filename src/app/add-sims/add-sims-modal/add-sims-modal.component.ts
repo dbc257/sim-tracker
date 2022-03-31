@@ -2,6 +2,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Batch } from 'src/app/models/batch.model';
+import { CRUDService } from 'src/app/services/crud.service';
 
 @Component({
   selector: 'app-add-sims-modal',
@@ -16,9 +18,51 @@ export class AddSimsModalComponent implements OnInit {
   active: boolean | undefined;
   // addSimsForm: FormGroup | undefined;
 
-  constructor(public activeModal: NgbActiveModal) {}
+  batch: Batch = {
+    name: '',
+    startIccid: '',
+    startImsi: '',
+    count: 1,
+    isActive: false,
+  };
+  submitted = false;
 
-  ngOnInit() {}
+  constructor(
+    public activeModal: NgbActiveModal,
+    public crudService: CRUDService
+  ) {}
+
+  ngOnInit(): void {}
+
+  createBatch(): void {
+    const data = {
+      name: this.batch.name,
+      startIccid: this.batch.startIccid,
+      startImsi: this.batch.startImsi,
+      count: this.batch.count,
+      isActive: this.batch.isActive,
+    };
+
+    this.crudService.create(data).subscribe({
+      next: (res) => {
+        console.log('res', res);
+        this.submitted = true;
+      },
+      error: (e) => console.error(e),
+    });
+  }
+
+  newBatch(): void {
+    this.submitted = false;
+    this.batch = {
+      name: '',
+      startIccid: '',
+      startImsi: '',
+      count: 0,
+      isActive: false,
+    };
+  }
+
   addSimsForm = new FormGroup({
     name: new FormControl('', Validators.required),
     iccid: new FormControl(

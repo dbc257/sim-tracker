@@ -43,8 +43,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let country of countries$ | async">
-        <th scope="row">{{ country.id }}</th>
+      <tr *ngFor="let sim of sims$ | async">
+        <th scope="row">{{ sim.id }}</th>
         <td>
           <!-- <img
             [src]="
@@ -54,21 +54,31 @@
             style="width: 20px"
           /> -->
           <ngb-highlight
-            [result]="country.name"
+            [result]="sim.iccid"
             [term]="service.searchTerm"
           ></ngb-highlight>
         </td>
         <td>
           <ngb-highlight
-            [result]="country.area | number"
+            [result]="sim.imsi"
             [term]="service.searchTerm"
           ></ngb-highlight>
         </td>
         <td>
           <ngb-highlight
-            [result]="country.population | number"
+            [result]="sim.batchId | number"
             [term]="service.searchTerm"
           ></ngb-highlight>
+        </td>
+        <td>
+          <!-- <ngb-highlight {{sim.isActive}}></ngb-highlight> -->
+        </td>
+        <td>
+          <!-- <ngb-highlight
+            [result]="sim.isActive"
+            [term]="service.searchTerm"
+          ></ngb-highlight> -->
+          <button>...</button>
         </td>
       </tr>
     </tbody>

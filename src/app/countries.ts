@@ -1,14 +1,50 @@
-import { Country, SIM } from './country';
+// import { Injectable, OnInit } from '@angular/core';
+import { Country, Sim } from './country';
+// import { CRUDService } from './services/crud.service';
 
-export const SIMS: SIM[] = [
+// @Injectable({
+//   providedIn: 'root',
+// })
+// export class SimsComponent implements OnInit {
+//   SIMS?: Sim[];
+//   // currentTutorial: Tutorial = {};
+//   // currentIndex = -1;
+//   // title = '';
+
+//   constructor(private crudService: CRUDService) {}
+
+//   ngOnInit(): void {
+//     this.retrieveTutorials();
+//   }
+
+//   retrieveTutorials(): void {
+//     this.crudService.getAll().subscribe({
+//       next: (data) => {
+//         // const SIMS = data;
+//         this.SIMS = data;
+//         console.log(data);
+//       },
+//       error: (e) => console.error(e),
+//     });
+//   }
+// }
+
+// export const SIMS: Sim[] = this.crudService.getAll().subscribe({
+//   next: (data) => {
+//     // const SIMS = data;
+//     this.SIMS = data;
+//     console.log(data);
+//   },
+//   error: (e) => console.error(e),
+// });
+
+export const SIMS: Sim[] = [
   {
     id: 1,
     iccid: '89520400007800343331',
     imsi: '334140000000229',
     isActive: true,
     batchId: 1,
-    createdAt: '2022-03-31T06:11:58.498Z',
-    updatedAt: '2022-03-31T06:11:58.499Z',
   },
   {
     id: 2,
@@ -16,8 +52,6 @@ export const SIMS: SIM[] = [
     imsi: '334140000000230',
     isActive: true,
     batchId: 1,
-    createdAt: '2022-03-31T06:11:58.607Z',
-    updatedAt: '2022-03-31T06:11:58.607Z',
   },
   {
     id: 3,
@@ -25,8 +59,6 @@ export const SIMS: SIM[] = [
     imsi: '334140000000231',
     isActive: true,
     batchId: 1,
-    createdAt: '2022-03-31T06:11:58.710Z',
-    updatedAt: '2022-03-31T06:11:58.710Z',
   },
   {
     id: 4,
@@ -34,8 +66,6 @@ export const SIMS: SIM[] = [
     imsi: '334140000000232',
     isActive: true,
     batchId: 1,
-    createdAt: '2022-03-31T06:11:58.811Z',
-    updatedAt: '2022-03-31T06:11:58.812Z',
   },
   {
     id: 5,
@@ -43,8 +73,6 @@ export const SIMS: SIM[] = [
     imsi: '334140000000233',
     isActive: true,
     batchId: 1,
-    createdAt: '2022-03-31T06:11:58.911Z',
-    updatedAt: '2022-03-31T06:11:58.911Z',
   },
   {
     id: 6,
@@ -52,8 +80,6 @@ export const SIMS: SIM[] = [
     imsi: '334140000000234',
     isActive: true,
     batchId: 1,
-    createdAt: '2022-03-31T06:11:59.013Z',
-    updatedAt: '2022-03-31T06:11:59.013Z',
   },
   {
     id: 7,
@@ -61,8 +87,6 @@ export const SIMS: SIM[] = [
     imsi: '334140000000235',
     isActive: true,
     batchId: 1,
-    createdAt: '2022-03-31T06:11:59.107Z',
-    updatedAt: '2022-03-31T06:11:59.107Z',
   },
   {
     id: 8,
@@ -70,8 +94,6 @@ export const SIMS: SIM[] = [
     imsi: '334140000000236',
     isActive: true,
     batchId: 1,
-    createdAt: '2022-03-31T06:11:59.201Z',
-    updatedAt: '2022-03-31T06:11:59.201Z',
   },
   {
     id: 9,
@@ -79,8 +101,6 @@ export const SIMS: SIM[] = [
     imsi: '334140000000237',
     isActive: true,
     batchId: 1,
-    createdAt: '2022-03-31T06:11:59.294Z',
-    updatedAt: '2022-03-31T06:11:59.294Z',
   },
   {
     id: 10,
@@ -88,10 +108,16 @@ export const SIMS: SIM[] = [
     imsi: '334140000000238',
     isActive: true,
     batchId: 1,
-    createdAt: '2022-03-31T06:11:59.311Z',
-    updatedAt: '2022-03-31T06:11:59.311Z',
+  },
+  {
+    id: 11,
+    iccid: '89520400007800343423',
+    imsi: '334140000000239',
+    isActive: true,
+    batchId: 2,
   },
 ];
+
 export const COUNTRIES: Country[] = [
   {
     id: 1,
