@@ -1,0 +1,130 @@
+<div class="modal-header">
+  <h4 class="modal-title">Add SIMs</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="addSimsForm" ngSubmit="onSubmit()">
+    <div class="mb-3">
+      <label for="batchName">Batch Name</label>
+      <div class="input-group">
+        <input
+          id="batchName"
+          class="form-control"
+          placeholder="Batch Name"
+          name="name"
+          formControlName="name"
+        />
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="iccidStartRange">ICCID Start Range (20 digits)</label>
+      <div class="input-group">
+        <input
+          id="iccidStartRange"
+          class="form-control"
+          placeholder="ICCID (19 + 1 digit checksum)"
+          name="iccid"
+          formControlName="iccid"
+        />
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="imsiStartRange">IMSI Start Range (15 digits)</label>
+      <div class="input-group">
+        <input
+          id="imsiStartRange"
+          class="form-control"
+          placeholder="IMSI (15 digits)"
+          name="imsi"
+          formControlName="imsi"
+        />
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="countSims">Count (max 25)</label>
+      <div class="input-group">
+        <input
+          id="countSims"
+          class="form-control"
+          placeholder="Number of SIMs to create"
+          name="count"
+          formControlName="count"
+        />
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="isActive">Active</label>
+      <!-- <div class="input-group">
+        <input ngbButton type="radio" class="btn-check" [value]="false" />
+      </div> -->
+      <!-- <div class="input-group">
+        <input
+          id="isActive"
+          class="form-control"
+          type="radio"
+          name="active"
+        />
+      </div> -->
+      <!-- btn-group -->
+
+      <!-- <div class="input-group" role="group" ngbRadioGroup name="radioBasic"> -->
+      <!-- [(ngModel)]="model" -->
+      <div class="input-group" role="group">
+        <label ngbButtonLabel>
+          <input
+            type="checkbox"
+            formControlName="active"
+            ngbButton
+            [value]="true"
+          />
+        </label>
+        <!-- <input
+            type="radio"
+            [value]="true"
+            class="btn-check"
+            id="btnradio1"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-primary" for="btnradio1">True</label> -->
+
+        <!-- <input
+            type="radio"
+            [value]="false"
+            class="btn-check"
+            id="btnradio2"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-primary" for="btnradio2">False</label> -->
+      </div>
+      <!-- </div> -->
+      <hr />
+      <!-- [formControl]="radio" -->
+      <!-- <pre>{{ model }}</pre> -->
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="activeModal.close('Close click')"
+  >
+    Cancel
+  </button>
+  <button
+    type="submit"
+    [disabled]="!addSimsForm.valid"
+    class="btn btn-outline-dark"
+    (click)="onSubmit()"
+  >
+    Submit
+  </button>
+</div>
