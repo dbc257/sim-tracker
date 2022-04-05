@@ -1,48 +1,50 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 
-import { Observable, throwError } from 'rxjs';
-import { catchError, map, retry } from 'rxjs/operators';
-
-export interface Config {
-  heroesUrl: string;
-  textfile: string;
-  date: any;
-}
+import { throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable()
-export class ConfigService {
-  configUrl = 'assets/config.json';
+export class TableService {
+  error: any;
+  result: any[] = [];
 
   constructor(private http: HttpClient) {}
 
-  getConfig() {
-    return this.http.get<Config>(this.configUrl).pipe(
-      retry(3), // retry a failed request up to 3 times
-      catchError(this.handleError) // then handle the error
-    );
-  }
-
-  getConfig_2() {
+  getSims() {
     return this.http
       .get('https://simulator-api.onrender.com/v1/sims')
       .pipe(map((res: any) => Object.values(res)));
   }
 
-  getConfig_1() {
-    // now returns an Observable of Config
-    return this.http.get<Config>(this.configUrl);
-  }
-
-  getConfig_3() {
+  getBatches() {
     return this.http
-      .get<Config>(this.configUrl)
-      .pipe(catchError(this.handleError));
+      .get('https://simulator-api.onrender.com/v1/batches')
+      .pipe(map((res: any) => Object.values(res)));
   }
 
-  getConfigResponse(): Observable<HttpResponse<Config>> {
-    return this.http.get<Config>(this.configUrl, { observe: 'response' });
+  postBatches() {
+    return this.http
+      .post('https://simulator-api.onrender.com/v1/batches', {
+        name: 'Batch 1',
+        startIccid: '89520400007800343321',
+        startImsi: '334140000000228',
+        count: 10,
+        isActive: true,
+      })
+      .subscribe(
+        (val) => {
+          console.log('POST call successful value returned in body', val);
+        },
+        (response) => {
+          console.log('POST call in error', response);
+        },
+        () => {
+          console.log('The POST observable is now completed.');
+        }
+      );
+    // .pipe(map((res: any) => Object.values(res)));
   }
 
   private handleError(error: HttpErrorResponse) {

@@ -1,8 +1,4 @@
-<!-- <button class="btn btn-lg btn-outline-primary" (click)="open()">
-  Launch demo modal
-</button> -->
-<!-- <app-heroes></app-heroes> -->
-<app-config></app-config>
+<app-sims></app-sims>
 <app-add-sims></app-add-sims>
 <form>
   <div class="mb-3 row">
@@ -28,12 +24,6 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <!-- <th scope="col">#</th>
-        <th scope="col" sortable="name" (sort)="onSort($event)">ICCID</th>
-        <th scope="col" sortable="area" (sort)="onSort($event)">IMSI</th>
-        <th scope="col" sortable="population" (sort)="onSort($event)">
-          Batch Name
-        </th> -->
         <th scope="col">#</th>
         <th scope="col">ICCID</th>
         <th scope="col">IMSI</th>
@@ -46,13 +36,6 @@
       <tr *ngFor="let sim of sims$ | async">
         <th scope="row">{{ sim.id }}</th>
         <td>
-          <!-- <img
-            [src]="
-              'https://upload.wikimedia.org/wikipedia/commons/' + country.flag
-            "
-            class="me-2"
-            style="width: 20px"
-          /> -->
           <ngb-highlight
             [result]="sim.iccid"
             [term]="service.searchTerm"
@@ -71,13 +54,9 @@
           ></ngb-highlight>
         </td>
         <td>
-          <!-- <ngb-highlight {{sim.isActive}}></ngb-highlight> -->
+          <ngb-highlight [result]="sim.isActive"></ngb-highlight>
         </td>
         <td>
-          <!-- <ngb-highlight
-            [result]="sim.isActive"
-            [term]="service.searchTerm"
-          ></ngb-highlight> -->
           <button>...</button>
         </td>
       </tr>

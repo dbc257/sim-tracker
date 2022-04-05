@@ -2,12 +2,12 @@
   margin: 1rem 0;
 }
 
-.heroes {
+.sims {
   list-style-type: none;
   padding: 0;
 }
 
-.heroes li {
+.sims li {
   display: grid;
   grid-template-columns: min-content max-content 1fr max-content max-content;
   grid-template-areas: "badge name . edit delete";
@@ -17,34 +17,34 @@
   border-radius: 4px;
 }
 
-.heroes li .badge {
+.sims li .badge {
   grid-area: badge;
 }
 
-.heroes li .name {
+.sims li .name {
   grid-area: name;
 }
 
-.heroes li button {
+.sims li button {
   margin: 0.3rem;
   padding: 0.3rem 0.8rem;
 }
 
-.heroes li button.edit {
+.sims li button.edit {
   grid-area: edit;
 }
 
-.heroes li button.delete {
+.sims li button.delete {
   grid-area: delete;
 }
 
-.heroes li button:hover,
+.sims li button:hover,
 .heros li button:focus {
   color: #eee;
   background-color: #000;
 }
 
-.heroes .badge {
+.sims .badge {
   padding: 0.5rem 0.6rem;
   color: white;
   background-color: #435b60;
@@ -55,13 +55,13 @@
   align-items: center;
 }
 
-.heroes input {
+.sims input {
   max-width: 12rem;
   padding: 0.25rem;
 }
 
 @media (max-width: 550px) {
-  .heroes li {
+  .sims li {
     grid-template-columns: min-content 1fr 1fr;
     grid-template-rows: 2rem max-content;
     grid-template-areas:
@@ -69,11 +69,11 @@
       "badge edit delete";
   }
 
-  .heroes li .name {
+  .sims li .name {
     margin-top: 0.3rem;
   }
 
-  .heroes li button {
+  .sims li button {
     justify-self: center;
   }
 }

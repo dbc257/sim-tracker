@@ -1,0 +1,81 @@
+import { Sim } from './sim';
+
+export const SIMS: Sim[] = [
+  {
+    id: 1,
+    iccid: '89520400007800343331',
+    imsi: '334140000000229',
+    isActive: 'Active',
+    batchId: 1,
+  },
+  {
+    id: 2,
+    iccid: '89520400007800343342',
+    imsi: '334140000000230',
+    isActive: 'Active',
+    batchId: 1,
+  },
+  {
+    id: 3,
+    iccid: '89520400007800343353',
+    imsi: '334140000000231',
+    isActive: 'Active',
+    batchId: 1,
+  },
+  {
+    id: 4,
+    iccid: '89520400007800343364',
+    imsi: '334140000000232',
+    isActive: 'Active',
+    batchId: 1,
+  },
+  {
+    id: 5,
+    iccid: '89520400007800343375',
+    imsi: '334140000000233',
+    isActive: 'Active',
+    batchId: 1,
+  },
+  {
+    id: 6,
+    iccid: '89520400007800343386',
+    imsi: '334140000000234',
+    isActive: 'Active',
+    batchId: 1,
+  },
+  {
+    id: 7,
+    iccid: '89520400007800343397',
+    imsi: '334140000000235',
+    isActive: 'Active',
+    batchId: 1,
+  },
+  {
+    id: 8,
+    iccid: '89520400007800343400',
+    imsi: '334140000000236',
+    isActive: 'Active',
+    batchId: 1,
+  },
+  {
+    id: 9,
+    iccid: '89520400007800343411',
+    imsi: '334140000000237',
+    isActive: 'Active',
+    batchId: 1,
+  },
+  {
+    id: 10,
+    iccid: '89520400007800343422',
+    imsi: '334140000000238',
+    isActive: 'Active',
+    batchId: 1,
+  },
+  {
+    id: 11,
+    iccid: '89520400007800343423',
+    imsi: '334140000000239',
+    isActive: 'Active',
+    batchId: 2,
+  },
+];

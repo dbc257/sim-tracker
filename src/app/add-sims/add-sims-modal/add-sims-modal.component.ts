@@ -10,14 +10,11 @@ import { CRUDService } from 'src/app/services/crud.service';
   templateUrl: './add-sims-modal.component.html',
 })
 export class AddSimsModalComponent implements OnInit {
-  // @Input() name: string;
   name: string | undefined;
   iccid: number | undefined;
   imsi: number | undefined;
   count: number | undefined;
   active: boolean | undefined;
-  // addSimsForm: FormGroup | undefined;
-
   batch: Batch = {
     name: '',
     startIccid: '',
@@ -99,12 +96,7 @@ export class AddSimsModalComponent implements OnInit {
 
   onSubmit() {
     console.log('Submitted', this.addSimsForm);
+    console.log('this.addSimsForm', this.addSimsForm);
     this.activeModal.close('Close click');
   }
 }
-
-// export class NgbdModalContent {
-//   @Input() name: any;
-
-//   constructor(public activeModal: NgbActiveModal) {}
-// }

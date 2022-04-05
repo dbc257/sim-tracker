@@ -7,26 +7,18 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { NgbdSortableHeader } from './sortable.directive';
 import { NgbdTableComplete } from './table-complete';
-import {
-  AddSimsComponent,
-  // NgbdModalContent,
-} from './add-sims/add-sims.component';
+import { AddSimsComponent } from './add-sims/add-sims.component';
 import { AddSimsModalComponent } from './add-sims/add-sims-modal/add-sims-modal.component';
-import { ConfigComponent } from './config/config.component';
-import { HeroesComponent } from './sims/sims.component';
-import { HttpErrorHandler } from './http-error-handler.service';
-// import { SimsComponent } from './countries';
+import { SimsComponent } from './sims/sims.component';
+import { HttpErrorHandler } from './services/http-error-handler.service';
 
 @NgModule({
   declarations: [
     NgbdTableComplete,
     NgbdSortableHeader,
     AddSimsComponent,
-    // NgbdModalContent,
     AddSimsModalComponent,
-    // AddSimsComponent
-    ConfigComponent,
-    HeroesComponent,
+    SimsComponent,
   ],
   imports: [
     BrowserModule,

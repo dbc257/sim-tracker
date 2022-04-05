@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Batch } from '../models/batch.model';
-import { Sim } from '../country';
+import { Sim } from '../sim';
 
 const baseUrl = 'https://simulator-api.onrender.com/v1/batches';
 
